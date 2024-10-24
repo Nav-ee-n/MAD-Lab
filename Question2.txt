@@ -1,0 +1,413 @@
+// Question 2
+// Calculator
+
+// MainActivity.java
+
+package com.example.calculator;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
+
+public class MainActivity extends AppCompatActivity {
+
+    Button zero,one,two,three,four,five,six,seven,eight,nine,add,sub,mul,div,equal,clear;
+    TextView info,result;
+    final char ADDITION = '+';
+    final char SUBTRACTION = '-';
+    final char MULTIPLICATION = '*';
+    final char DIVISION ='/';
+    final char EQU = '0';
+    double val1=Double.NaN;
+    double val2;
+    char ACTION;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        zero=(Button) findViewById(R.id.btn0);
+        one=(Button) findViewById(R.id.btn1);
+        two=(Button) findViewById(R.id.btn2);
+        three=(Button) findViewById(R.id.btn3);
+        four=(Button) findViewById(R.id.btn4);
+        five=(Button) findViewById(R.id.btn5);
+        six=(Button) findViewById(R.id.btn6);
+        seven=(Button) findViewById(R.id.btn7);
+        eight=(Button) findViewById(R.id.btn8);
+        nine=(Button) findViewById(R.id.btn9);
+        add=(Button) findViewById(R.id.btnadd);
+        sub=(Button) findViewById(R.id.btnsub);
+        mul=(Button) findViewById(R.id.btnmul);
+        div=(Button) findViewById(R.id.btndivide);
+        info=(TextView) findViewById(R.id.tvControl);
+        result=(TextView) findViewById(R.id.tvDisplay);
+        equal=(Button) findViewById(R.id.btnequal);
+        clear=(Button) findViewById(R.id.btnclear);
+
+        zero.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                info.setText(info.getText().toString() + "0");
+            }
+        });
+        one.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                info.setText(info.getText().toString() + "1");
+            }
+        });
+        two.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                info.setText(info.getText().toString() + "2");
+            }
+        });
+        three.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                info.setText(info.getText().toString() + "3");
+            }
+        });
+        four.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                info.setText(info.getText().toString() + "4");
+            }
+        });
+        five.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                info.setText(info.getText().toString() + "5");
+            }
+        });
+        six.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                info.setText(info.getText().toString() + "6");
+            }
+        });
+        seven.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                info.setText(info.getText().toString() + "7");
+            }
+        });
+        eight.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                info.setText(info.getText().toString() + "8");
+            }
+        });
+        nine.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                info.setText(info.getText().toString() + "9");
+            }
+        });
+        add.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                compute();
+                ACTION=ADDITION;
+                result.setText(String.valueOf(val1)+"+");
+                info.setText(null);
+
+            }
+        });
+        sub.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                compute();
+                ACTION=SUBTRACTION;
+                result.setText((String.valueOf(val1)+"-"));
+                info.setText(null);
+            }
+        });
+        mul.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                compute();
+                ACTION=MULTIPLICATION;
+                result.setText(String.valueOf(val1)+"*");
+                info.setText(null);
+            }
+        });
+        div.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                compute();
+                ACTION=DIVISION;
+                result.setText(String.valueOf(val1)+"/");
+                info.setText(null);
+            }
+        });
+        equal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                compute();
+                ACTION=EQU;
+                result.setText(result.getText().toString() + String.valueOf(val2) + "=" + String.valueOf(val1));
+                // 5 + 4 = 9
+                info.setText(null);
+            }
+        });
+        clear.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(info.getText().length() > 0){
+                    CharSequence name= info.getText().toString();
+                    info.setText(name.subSequence(0,name.length()-1));
+                }
+                else{
+                    val1=Double.NaN;
+                    val2=Double.NaN;
+                    info.setText(null);
+                    result.setText(null);
+                }
+            }
+        });
+
+    }
+    private void compute(){
+        if(!Double.isNaN(val1)){
+            val2=Double.parseDouble(info.getText().toString());
+
+            switch (ACTION){
+                case ADDITION:
+                    val1=val1+val2;
+                    break;
+                case SUBTRACTION:
+                    val1=val1-val2;
+                    break;
+                case MULTIPLICATION:
+                    val1=val1*val2;
+                    break;
+                case DIVISION:
+                    val1=val1/val2;
+                    break;
+                case EQU:
+                    break;
+            }
+        }
+        else {
+            val1=Double.parseDouble(info.getText().toString());
+        }
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// activity_main.xml
+
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="#fff000">
+
+    <Button
+        android:id="@+id/btn9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="19dp"
+        android:layout_marginBottom="282dp"
+        android:text="9" />
+
+    <Button
+        android:id="@+id/btn8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="121dp"
+        android:layout_marginBottom="279dp"
+        android:text="8" />
+
+    <Button
+        android:id="@+id/btn7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="98dp"
+        android:layout_marginBottom="281dp"
+        android:text="7" />
+
+    <Button
+        android:id="@+id/btn6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="19dp"
+        android:layout_marginBottom="220dp"
+        android:text="6" />
+
+    <Button
+        android:id="@+id/btn5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="120dp"
+        android:layout_marginBottom="219dp"
+        android:text="5" />
+
+    <Button
+        android:id="@+id/btn4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="98dp"
+        android:layout_marginBottom="218dp"
+        android:text="4" />
+
+    <Button
+        android:id="@+id/btn3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="18dp"
+        android:layout_marginBottom="160dp"
+        android:text="3" />
+
+    <Button
+        android:id="@+id/btn2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="120dp"
+        android:layout_marginBottom="158dp"
+        android:text="2" />
+
+    <Button
+        android:id="@+id/btn1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="99dp"
+        android:layout_marginBottom="167dp"
+        android:text="1" />
+
+    <Button
+        android:id="@+id/btndivide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="280dp"
+        android:text="/" />
+
+    <Button
+        android:id="@+id/btnmul"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="218dp"
+        android:text="*" />
+
+    <Button
+        android:id="@+id/btnclear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="21dp"
+        android:layout_marginBottom="97dp"
+        android:text="clear" />
+
+    <Button
+        android:id="@+id/btn0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="120dp"
+        android:layout_marginBottom="99dp"
+        android:text="0" />
+
+    <Button
+        android:id="@+id/btnequal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="97dp"
+        android:layout_marginBottom="99dp"
+        android:text="=" />
+
+    <Button
+        android:id="@+id/btnadd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="158dp"
+        android:text="+" />
+
+    <Button
+        android:id="@+id/btnsub"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="-1dp"
+        android:layout_marginBottom="98dp"
+        android:text="-" />
+
+    <TextView
+        android:id="@+id/tvControl"
+        android:layout_width="376dp"
+        android:layout_height="37dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="318dp"
+        android:textSize="20sp"
+        android:layout_marginEnd="17dp" />
+
+    <TextView
+        android:id="@+id/tvDisplay"
+        android:layout_width="374dp"
+        android:layout_height="32dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="260dp"
+        android:textSize="20sp"
+        android:layout_marginEnd="18dp" />
+
+</RelativeLayout>
