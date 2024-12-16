@@ -1,0 +1,212 @@
+package com.example.question6;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+
+public class MainActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="2386dp">
+
+        <LinearLayout
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Button
+                android:layout_width="472dp"
+                android:layout_height="match_parent"
+                android:minWidth="300dip"
+                android:minHeight="140dip"
+                android:text="Click"
+                android:textSize="60sp" />
+            <Button
+                android:layout_width="472dp"
+                android:layout_height="match_parent"
+                android:minWidth="300dip"
+                android:minHeight="140dip"
+                android:text="Click"
+                android:textSize="60sp" />
+            <Button
+                android:layout_width="472dp"
+                android:layout_height="match_parent"
+                android:minWidth="300dip"
+                android:minHeight="140dip"
+                android:text="Click"
+                android:textSize="60sp" />
+            <Button
+                android:layout_width="472dp"
+                android:layout_height="match_parent"
+                android:minWidth="300dip"
+                android:minHeight="140dip"
+                android:text="Click"
+                android:textSize="60sp" />
+            <Button
+                android:layout_width="472dp"
+                android:layout_height="match_parent"
+                android:minWidth="300dip"
+                android:minHeight="140dip"
+                android:text="Click"
+                android:textSize="60sp" />
+            <Button
+                android:layout_width="472dp"
+                android:layout_height="match_parent"
+                android:minWidth="300dip"
+                android:minHeight="140dip"
+                android:text="Click"
+                android:textSize="60sp" />
+            <Button
+                android:layout_width="472dp"
+                android:layout_height="match_parent"
+                android:minWidth="300dip"
+                android:minHeight="140dip"
+                android:text="Click"
+                android:textSize="60sp" />
+            <Button
+                android:layout_width="472dp"
+                android:layout_height="match_parent"
+                android:minWidth="300dip"
+                android:minHeight="140dip"
+                android:text="Click"
+                android:textSize="60sp" />
+            <Button
+                android:layout_width="472dp"
+                android:layout_height="match_parent"
+                android:minWidth="300dip"
+                android:minHeight="140dip"
+                android:text="Click"
+                android:textSize="60sp" />
+            <Button
+                android:layout_width="472dp"
+                android:layout_height="match_parent"
+                android:minWidth="300dip"
+                android:minHeight="140dip"
+                android:text="Click"
+                android:textSize="60sp" />
+            <Button
+                android:layout_width="472dp"
+                android:layout_height="match_parent"
+                android:minWidth="300dip"
+                android:minHeight="140dip"
+                android:text="Click"
+                android:textSize="60sp" />
+            <Button
+                android:layout_width="472dp"
+                android:layout_height="match_parent"
+                android:minWidth="300dip"
+                android:minHeight="140dip"
+                android:text="Click"
+                android:textSize="60sp" />
+            <Button
+                android:layout_width="472dp"
+                android:layout_height="match_parent"
+                android:minWidth="300dip"
+                android:minHeight="140dip"
+                android:text="Click"
+                android:textSize="60sp" />
+            <Button
+                android:layout_width="472dp"
+                android:layout_height="match_parent"
+                android:minWidth="300dip"
+                android:minHeight="140dip"
+                android:text="Click"
+                android:textSize="60sp" />
+            <Button
+                android:layout_width="472dp"
+                android:layout_height="match_parent"
+                android:minWidth="300dip"
+                android:minHeight="140dip"
+                android:text="Click"
+                android:textSize="60sp" />
+            <Button
+                android:layout_width="472dp"
+                android:layout_height="match_parent"
+                android:minWidth="300dip"
+                android:minHeight="140dip"
+                android:text="Click"
+                android:textSize="60sp" />
+            <Button
+                android:layout_width="472dp"
+                android:layout_height="match_parent"
+                android:minWidth="300dip"
+                android:minHeight="140dip"
+                android:text="Click"
+                android:textSize="60sp" />
+            <Button
+                android:layout_width="472dp"
+                android:layout_height="match_parent"
+                android:minWidth="300dip"
+                android:minHeight="140dip"
+                android:text="Click"
+                android:textSize="60sp" />
+            <Button
+                android:layout_width="472dp"
+                android:layout_height="match_parent"
+                android:minWidth="300dip"
+                android:minHeight="140dip"
+                android:text="Click"
+                android:textSize="60sp" />
+            <Button
+                android:layout_width="472dp"
+                android:layout_height="match_parent"
+                android:minWidth="300dip"
+                android:minHeight="140dip"
+                android:text="Click"
+                android:textSize="60sp" />
+            <Button
+                android:layout_width="472dp"
+                android:layout_height="match_parent"
+                android:minWidth="300dip"
+                android:minHeight="140dip"
+                android:text="Click"
+                android:textSize="60sp" />
+        </LinearLayout>
+    </ScrollView>
+
+
+
+</LinearLayout>
